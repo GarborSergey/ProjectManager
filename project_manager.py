@@ -122,6 +122,10 @@ class Project:
         pathCounterparty = path + os.sep + self.__counterparty  # path to Counterparty dir
         pathProject = pathCounterparty + os.sep + self.__name  # path to Project dir
 
+        self.__dateModification = datetime.now()
+
+        self.__create_config_file(pathProject)
+
         # create empty folder for making files
         os.mkdir(pathProject + os.sep + f'маркировка_{self.__name}')
 
